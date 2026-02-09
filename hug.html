@@ -1,53 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Hug Day!</title>
-    <link rel="stylesheet" href="days.css">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Hug Day - For Sonakshi 🤗</title>
+    <link rel="stylesheet" href="day-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
+<body class="hug-day">
+    <div class="petals-container"></div>
+    
+    <nav class="nav">
+        <a href="index.html" class="back-btn">← Back to Home</a>
+    </nav>
 
-<body>
-    <div class="main">
-        <h2>* Hug Day Special *</h2>
-        <div class="hero">
-            <div class="left">
-                <div class="lovers-details">
-                    <!-- <h3 id="user-profile-text">Propose like <br> never before</h3> -->
-                    <img src="./assets/Love In The Air SVG Cut File.svg" alt="Love In The Air"
-                        style="width:100px;height:100px;margin-top: 2.5rem;margin-bottom: 2.5rem;">
-                    <lord-icon src="https://cdn.lordicon.com/lhwyshcs.json" trigger="hover"
-                        style="width:100px;height:100px;backdrop-filter: blur(5px);">
-                    </lord-icon>
-                    <p id="fpname">Male</p>
-                    <h3>💞</h3>
-                    <lord-icon src="https://cdn.lordicon.com/btlpicdx.json" trigger="hover"
-                        style="width:100px;height:100px;backdrop-filter: blur(5px);">
-                    </lord-icon>
-                    <p id="spname">Female</p>
-                </div>
-                <img src="./assets/All You Need Is Love SVG Cut File.svg" alt="All You Need Is Love"
-                    style="width:100px;height:100px;margin-top: 2.5rem;">
-            </div>
-            <div class="right hug-right">
-                <div class="back-container">
-                    <a href="#" onclick="window.history.back()">
-                        <div class="back">
-                            <span class="material-symbols-outlined">arrow_back</span>
-                            <span class="back-text">Go back</span>
-                        </div>
-                    </a>
-                </div>
-                <h3 class="quote-heading">Special Quotes for my special one on the Hug Day! ❤️</h3>
-                <div class="quotes"></div>
-            </div>
+    <div class="content-wrapper">
+        <div class="day-header">
+            <div class="icon-large">🤗</div>
+            <h1 class="day-title">Hug Day</h1>
+            <p class="day-date">February 12, 2026</p>
+            <p class="dedication">For my warm Sonakshi</p>
         </div>
-        <div class="copyright-container">
-            <h3 class="copyright">Created with ❤️ by <a id="instagramProfileLink" href="#" target="_blank"><span id="instagramProfileName"></span></a></h3>
+
+        <div class="message-card">
+            <h2>In Your Arms, I Found Home</h2>
+            <p>Sonakshi, there is no place in this world where I feel safer, warmer, or more loved than in your arms. Your hugs have the magical power to heal every wound and melt away every worry.</p>
+            <p>A hug from you is more than just an embrace — it's a silent promise that says "I'm here, I care, and I'm not going anywhere." And that's exactly what I want you to know today.</p>
+            <p>On this Hug Day, I wish I could wrap you in the biggest, warmest hug and never let go. You are my comfort, my peace, and my home.</p>
+            <p class="signature">Sending endless hugs,<br>Pabani 💕</p>
+        </div>
+
+        <div class="quote-section">
+            <h3>Warm Embraces</h3>
+            <div class="quote-carousel">
+                <div class="quote active">
+                    <p>"A hug is a way to say 'I care,' a hug is a way to show 'I'm there.'"</p>
+                </div>
+                <div class="quote">
+                    <p>"Your hugs are my safe place, where I find peace and grace."</p>
+                </div>
+                <div class="quote">
+                    <p>"A hug from you is my favorite therapy — it heals my heart and sets me free."</p>
+                </div>
+                <div class="quote">
+                    <p>"Your hugs are my forever home, where I'm never alone."</p>
+                </div>
+            </div>
+            <div class="carousel-dots">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+                <span class="dot" data-index="2"></span>
+                <span class="dot" data-index="3"></span>
+            </div>
         </div>
     </div>
-    <script src="./quotesHugDay.js"></script>
-    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+
+    <script src="day-script.js"></script>
+    <script>
+        // Create falling hugs
+        function createHug() {
+            const hug = document.createElement('div');
+            hug.className = 'falling-petal';
+            hug.textContent = '🤗';
+            hug.style.left = Math.random() * 100 + '%';
+            hug.style.animationDuration = Math.random() * 3 + 4 + 's';
+            hug.style.animationDelay = Math.random() * 2 + 's';
+            document.querySelector('.petals-container').appendChild(hug);
+            
+            setTimeout(() => {
+                hug.remove();
+            }, 7000);
+        }
+
+        setInterval(createHug, 1000);
+    </script>
+</body>
+</html>

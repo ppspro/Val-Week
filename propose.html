@@ -1,57 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Propose Day!</title>
-    <link rel="stylesheet" href="days.css">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Propose Day - For Sonakshi 💍</title>
+    <link rel="stylesheet" href="day-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
+<body class="propose-day">
+    <div class="petals-container"></div>
+    
+    <nav class="nav">
+        <a href="index.html" class="back-btn">← Back to Home</a>
+    </nav>
 
-<body>
-    <div class="main">
-        <h2>* Propose Day Special *</h2>
-        <div class="hero">
-            <div class="left">
-                <div class="lovers-details">
-                    <!-- <h3 id="user-profile-text">Propose like <br> never before</h3> -->
-                    <img src="./assets/Love In The Air SVG Cut File.svg" alt="Love In The Air"
-                        style="width:100px;height:100px;margin-top: 2.5rem;margin-bottom: 2.5rem;">
-                    <lord-icon src="https://cdn.lordicon.com/lhwyshcs.json" trigger="hover"
-                        style="width:100px;height:100px;backdrop-filter: blur(5px);">
-                    </lord-icon>
-                    <p id="fpname">Male</p>
-                    <h3>💞</h3>
-                    <lord-icon src="https://cdn.lordicon.com/btlpicdx.json" trigger="hover"
-                        style="width:100px;height:100px;backdrop-filter: blur(5px);">
-                    </lord-icon>
-                    <p id="spname">Female</p>
-                </div>
-                <img src="./assets/All You Need Is Love SVG Cut File.svg" alt="All You Need Is Love"
-                    style="width:100px;height:100px;margin-top: 2.5rem;">
-            </div>
-            <div class="right propose-right">
-                <div class="back-container">
-                    <a href="#" onclick="window.history.back()">
-                        <div class="back">
-                            <span class="material-symbols-outlined">arrow_back</span>
-                            <span class="back-text">Go back</span>
-                        </div>
-                    </a>
-                </div>
-                <h3 class="quote-heading">Special Quotes to propose my special one! ❤️</h3>
-                <div class="quotes"></div>
-            </div>
+    <div class="content-wrapper">
+        <div class="day-header">
+            <div class="icon-large">💍</div>
+            <h1 class="day-title">Propose Day</h1>
+            <p class="day-date">February 8, 2026</p>
+            <p class="dedication">For my dearest Sonakshi</p>
         </div>
-        <div class="copyright-container">
-            <h3 class="copyright">Created with ❤️ by <a id="instagramProfileLink" href="#" target="_blank"><span id="instagramProfileName"></span></a></h3>
+
+        <div class="message-card">
+            <h2>Every Day I Choose You</h2>
+            <p>Sonakshi, from the very first moment I saw you, I knew my heart had found its home. Every day since then, I have chosen you — and every day for the rest of my life, I will continue to choose you.</p>
+            <p>You are the reason I believe in love, the reason I smile without a cause, and the reason my world feels complete. With you, everything makes sense.</p>
+            <p>Today, on Propose Day, I want to say it again — I love you, I choose you, and I want to walk this beautiful journey of life with you, forever.</p>
+            <p class="signature">With all my love,<br>Pabani 💕</p>
+        </div>
+
+        <div class="quote-section">
+            <h3>Words From The Heart</h3>
+            <div class="quote-carousel">
+                <div class="quote active">
+                    <p>"In the garden of love, will you be my forever flower?"</p>
+                </div>
+                <div class="quote">
+                    <p>"Our love story is my favorite. Will you make it official and be my forever?"</p>
+                </div>
+                <div class="quote">
+                    <p>"You're the answer to my prayers. Will you make my dreams come true by being mine?"</p>
+                </div>
+                <div class="quote">
+                    <p>"Every day I choose you, and I will keep choosing you, forever and always."</p>
+                </div>
+            </div>
+            <div class="carousel-dots">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+                <span class="dot" data-index="2"></span>
+                <span class="dot" data-index="3"></span>
+            </div>
         </div>
     </div>
 
-    <script src="./quotesProposeDay.js"></script>
-    <script src="https://cdn.lordicon.com/lordicon.js"></script>
-</body>
+    <script src="day-script.js"></script>
+    <script>
+        // Create falling rings
+        function createRing() {
+            const ring = document.createElement('div');
+            ring.className = 'falling-petal';
+            ring.textContent = '💍';
+            ring.style.left = Math.random() * 100 + '%';
+            ring.style.animationDuration = Math.random() * 3 + 4 + 's';
+            ring.style.animationDelay = Math.random() * 2 + 's';
+            document.querySelector('.petals-container').appendChild(ring);
+            
+            setTimeout(() => {
+                ring.remove();
+            }, 7000);
+        }
 
+        setInterval(createRing, 1000);
+    </script>
+</body>
 </html>
