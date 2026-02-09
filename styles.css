@@ -1,0 +1,447 @@
+:root {
+    --rose-pink: #ff6b9d;
+    --deep-pink: #c44569;
+    --soft-pink: #ffeef4;
+    --cream: #fff5f7;
+    --dark: #2d1b2e;
+    --accent: #ff1744;
+    --gold: #ffd700;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, var(--soft-pink) 0%, var(--cream) 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Animated hearts background */
+.hearts-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.hearts-bg::before,
+.hearts-bg::after {
+    content: '♥';
+    position: absolute;
+    font-size: 20px;
+    color: rgba(255, 107, 157, 0.2);
+    animation: float 15s infinite;
+}
+
+.hearts-bg::before {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.hearts-bg::after {
+    left: 80%;
+    animation-delay: 7s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Cursor glow effect */
+.cursor-glow {
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255, 107, 157, 0.3) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 999;
+    transition: transform 0.2s ease;
+    transform: translate(-50%, -50%);
+}
+
+/* Container */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 4rem 1rem 3rem;
+    animation: fadeInDown 1s ease;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 4rem);
+    color: var(--dark);
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.from, .to {
+    display: inline-block;
+    animation: slideIn 1s ease;
+}
+
+.from {
+    animation-delay: 0.2s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.to {
+    animation-delay: 0.4s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.heart {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    color: var(--accent);
+    animation: heartbeat 1.5s ease infinite;
+    display: inline-block;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.1);
+    }
+    50% {
+        transform: scale(1);
+    }
+}
+
+.subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    color: var(--deep-pink);
+    font-weight: 300;
+    animation: fadeIn 1.5s ease;
+    animation-delay: 0.6s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Days Container */
+.days-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Day Cards */
+.day-card {
+    perspective: 1000px;
+    height: 350px;
+    animation: fadeInUp 0.8s ease;
+    animation-fill-mode: backwards;
+}
+
+.day-card:nth-child(1) { animation-delay: 0.1s; }
+.day-card:nth-child(2) { animation-delay: 0.2s; }
+.day-card:nth-child(3) { animation-delay: 0.3s; }
+.day-card:nth-child(4) { animation-delay: 0.4s; }
+.day-card:nth-child(5) { animation-delay: 0.5s; }
+.day-card:nth-child(6) { animation-delay: 0.6s; }
+.day-card:nth-child(7) { animation-delay: 0.7s; }
+.day-card:nth-child(8) { animation-delay: 0.8s; }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.day-card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.card-front {
+    background: linear-gradient(135deg, #ffffff 0%, var(--soft-pink) 100%);
+    border: 2px solid rgba(255, 107, 157, 0.2);
+}
+
+.card-back {
+    background: linear-gradient(135deg, var(--rose-pink) 0%, var(--deep-pink) 100%);
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    animation: bounce 2s ease infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.day-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--dark);
+    margin-bottom: 0.5rem;
+}
+
+.date {
+    color: var(--deep-pink);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.card-back h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.card-back p {
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.explore-btn {
+    padding: 0.8rem 2rem;
+    background: white;
+    color: var(--deep-pink);
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.explore-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(255, 255, 255, 0.4);
+}
+
+/* Valentine Special Card */
+.valentine-special .card-front {
+    background: linear-gradient(135deg, var(--gold) 0%, #ffa500 100%);
+    border: 3px solid var(--accent);
+    position: relative;
+    overflow: hidden;
+}
+
+.valentine-special .card-front::before {
+    content: '✨';
+    position: absolute;
+    font-size: 2rem;
+    animation: sparkle 2s ease infinite;
+}
+
+@keyframes sparkle {
+    0%, 100% {
+        opacity: 0;
+        transform: scale(0.5) rotate(0deg);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2) rotate(180deg);
+    }
+}
+
+.valentine-special .card-back {
+    background: linear-gradient(135deg, var(--accent) 0%, #ff1744 100%);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 3rem 1rem 2rem;
+    color: var(--dark);
+    animation: fadeIn 2s ease;
+}
+
+.footer p {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+.footer-note {
+    font-size: 0.9rem;
+    color: var(--deep-pink);
+    font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem 0.5rem;
+    }
+
+    .hero {
+        padding: 2rem 1rem 1.5rem;
+    }
+
+    .days-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1rem 0.5rem;
+    }
+
+    .day-card {
+        height: 320px;
+    }
+
+    .card-front,
+    .card-back {
+        padding: 1.5rem;
+    }
+
+    .icon {
+        font-size: 3rem;
+    }
+
+    .day-card h2 {
+        font-size: 1.5rem;
+    }
+
+    .cursor-glow {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 2rem;
+    }
+
+    .heart {
+        font-size: 2.5rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .day-card {
+        height: 300px;
+    }
+
+    .icon {
+        font-size: 2.5rem;
+    }
+
+    .day-card h2 {
+        font-size: 1.3rem;
+    }
+
+    .card-back h3 {
+        font-size: 1.2rem;
+    }
+
+    .card-back p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Touch devices - auto flip on tap */
+@media (hover: none) and (pointer: coarse) {
+    .day-card.flipped .card-inner {
+        transform: rotateY(180deg);
+    }
+}
