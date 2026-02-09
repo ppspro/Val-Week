@@ -58,22 +58,21 @@ valentine-week/
 ├── script.js               # Main page interactions
 ├── day-styles.css          # Shared styles for day pages
 ├── day-script.js           # Shared scripts for day pages
-├── days/
-│   ├── rose.html          # Rose Day page
-│   ├── propose.html       # Propose Day (create more)
-│   ├── chocolate.html     # Chocolate Day
-│   ├── teddy.html         # Teddy Day
-│   ├── promise.html       # Promise Day
-│   ├── hug.html           # Hug Day
-│   ├── kiss.html          # Kiss Day
-│   └── valentine.html     # Valentine's Day special
+├── rose.html              # Rose Day page
+├── propose.html           # Propose Day (create more)
+├── chocolate.html         # Chocolate Day
+├── teddy.html             # Teddy Day
+├── promise.html           # Promise Day
+├── hug.html               # Hug Day
+├── kiss.html              # Kiss Day
+├── valentine.html         # Valentine's Day special
 └── README.md              # This file
 ```
 
 ## 🎯 Customization Tips
 
 ### To Create More Day Pages:
-1. Copy `days/rose.html` as a template
+1. Copy `rose.html` as a template
 2. Change the body class (e.g., `class="propose-day"`)
 3. Update the content, messages, and quotes
 4. The styling is already responsive and will adapt!
