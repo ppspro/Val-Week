@@ -46,7 +46,7 @@ if ('ontouchstart' in window) {
 
 // Navigation function
 function navigateToDay(day) {
-    window.location.href = `days/${day}.html`;
+    window.location.href = `${day}.html`;
 }
 
 // Add sparkle effect to Valentine card
