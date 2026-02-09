@@ -1,182 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- The title will be updated dynamically using config.json -->
-    <title>Happy Valentine's Day My Love 💗💗💗</title>
-    <link rel="stylesheet" href="quotes.css">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <style>
-        .music {
-            width: 35px;
-            height: 35px;
-            position: fixed;
-            top: 3.5vh;
-            /* Default for larger screens: top right */
-            right: 3.5vh;
-            border-radius: 50%;
-            background-color: rgba(0, 0, 0, 0.6);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            z-index: 10000;
-        }
-
-        /* For mobile devices, reposition the music element to the bottom right */
-        @media only screen and (max-width: 768px) {
-            .music {
-                top: auto;
-                bottom: 3.5vh;
-                right: 3.5vh;
-            }
-        }
-
-        .music>.iconfont {
-            font-size: 19px;
-            color: #fff;
-            cursor: pointer;
-            animation: rotating 1.2s linear infinite;
-            animation-play-state: paused;
-        }
-
-        .music>.iconfont.rotate {
-            animation-play-state: running;
-        }
-
-        @keyframes rotating {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(1turn);
-            }
-        }
-
-        @font-face {
-            font-family: 'iconfont';
-            src: url('//at.alicdn.com/t/font_669713_r7pgq0vmjqc.eot');
-            src: url('//at.alicdn.com/t/font_669713_r7pgq0vmjqc.eot?#iefix') format('embedded-opentype'),
-                url('//at.alicdn.com/t/font_669713_r7pgq0vmjqc.woff2') format('woff2'),
-                url('//at.alicdn.com/t/font_669713_r7pgq0vmjqc.woff') format('woff'),
-                url('//at.alicdn.com/t/font_669713_r7pgq0vmjqc.ttf') format('truetype'),
-                url('//at.alicdn.com/t/font_669713_r7pgq0vmjqc.svg#iconfont') format('svg');
-        }
-
-        .iconfont {
-            font-family: "iconfont" !important;
-            font-size: 16px;
-            font-style: normal;
-            -webkit-font-smoothing: antialiased;
-            -webkit-text-stroke-width: 0.2px;
-            -moz-osx-font-smoothing: grayscale;
-        }
-    </style>
+    <title>For Sonakshi 💕 - A Week of Love</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    <!-- Content iframe where your pages (index.html, rose.html, etc.) will be loaded -->
-    <iframe src="main.html" style="width: 100%; height: 100vh; border: none;" id="content-frame"></iframe>
+    <div class="cursor-glow"></div>
+    <div class="hearts-bg"></div>
+    
+    <div class="container">
+        <header class="hero">
+            <div class="hero-content">
+                <h1 class="title">
+                    <span class="from">From Pabani</span>
+                    <span class="heart">♥</span>
+                    <span class="to">To Sonakshi</span>
+                </h1>
+                <p class="subtitle">A celebration of our love, one day at a time</p>
+            </div>
+        </header>
 
-    <!-- Music element positioned based on screen size -->
-    <div class="music">
-        <i class="iconfont music-close">&#xea28;</i>
-        <!-- Audio element without autoplay and muted attributes -->
-        <audio class="audio" preload loop>
-            <source src="./assets/Perfect (Acoustic).mp3" type="audio/mp3" />
-            Your browser does not support the audio element.
-        </audio>
+        <main class="days-container">
+            <div class="day-card" data-day="rose">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="icon">🌹</div>
+                        <h2>Rose Day</h2>
+                        <p class="date">February 7</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>Like this rose...</h3>
+                        <p>Your beauty blooms eternal in my heart</p>
+                        <button class="explore-btn" onclick="navigateToDay('rose')">Explore</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="day-card" data-day="propose">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="icon">💍</div>
+                        <h2>Propose Day</h2>
+                        <p class="date">February 8</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>Every day...</h3>
+                        <p>I choose you again and again</p>
+                        <button class="explore-btn" onclick="navigateToDay('propose')">Explore</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="day-card" data-day="chocolate">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="icon">🍫</div>
+                        <h2>Chocolate Day</h2>
+                        <p class="date">February 9</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>Sweet moments...</h3>
+                        <p>Life with you is sweeter than chocolate</p>
+                        <button class="explore-btn" onclick="navigateToDay('chocolate')">Explore</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="day-card" data-day="teddy">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="icon">🧸</div>
+                        <h2>Teddy Day</h2>
+                        <p class="date">February 10</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>Soft and warm...</h3>
+                        <p>Like the comfort I find in your embrace</p>
+                        <button class="explore-btn" onclick="navigateToDay('teddy')">Explore</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="day-card" data-day="promise">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="icon">🤝</div>
+                        <h2>Promise Day</h2>
+                        <p class="date">February 11</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>My promise...</h3>
+                        <p>To love you through every season</p>
+                        <button class="explore-btn" onclick="navigateToDay('promise')">Explore</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="day-card" data-day="hug">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="icon">🤗</div>
+                        <h2>Hug Day</h2>
+                        <p class="date">February 12</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>In your arms...</h3>
+                        <p>I found my home</p>
+                        <button class="explore-btn" onclick="navigateToDay('hug')">Explore</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="day-card" data-day="kiss">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="icon">💋</div>
+                        <h2>Kiss Day</h2>
+                        <p class="date">February 13</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>Every kiss...</h3>
+                        <p>Tells a story only we understand</p>
+                        <button class="explore-btn" onclick="navigateToDay('kiss')">Explore</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="day-card valentine-special" data-day="valentine">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="icon">💖</div>
+                        <h2>Valentine's Day</h2>
+                        <p class="date">February 14</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>Forever & Always</h3>
+                        <p>My heart belongs to you, Sonakshi</p>
+                        <button class="explore-btn" onclick="navigateToDay('valentine')">Open My Heart</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>Made with endless love by Pabani 💕</p>
+            <p class="footer-note">Click any card to explore our special moments</p>
+        </footer>
     </div>
-    <script src="https://cdn.lordicon.com/lordicon.js"></script>
-    <script>
-        var musicDom = document.querySelector('.music');
-        var audioDom = document.querySelector('.audio');
-        var musicCloseDom = musicDom.querySelector('.music-close');
 
-        // Existing logic for audio on iOS/Android (if needed)
-        if (audioDom.readyState == 4) { // Android-specific logic
-            console.log('loaded');
-        } else { // iOS logic
-            audioDom.addEventListener('play', function () {
-                try {
-                    musicCloseDom.classList.add('rotate');
-                } catch (error) {
-                    // Handle error if necessary
-                }
-            }, false);
-            audioDom.addEventListener('canplaythrough', function () {
-                try {
-                    var promise = audioDom.play();
-                    if (promise !== undefined) {
-                        promise.then(function () {
-                            musicCloseDom.classList.add('rotate');
-                        }).catch(function () {
-                            musicCloseDom.classList.remove('rotate');
-                        });
-                    }
-                } catch (error) {
-                    console.log('error', error);
-                }
-            }, false);
-            audioDom.load();
-        }
-
-        // On click, toggle play/pause manually.
-        musicDom.addEventListener('click', function (event) {
-            if (!audioDom.paused) {
-                audioDom.pause();
-                musicCloseDom.classList.remove('rotate');
-            } else {
-                audioDom.play();
-                musicCloseDom.classList.add('rotate');
-            }
-            event.preventDefault();
-        }, false);
-
-        // Listen for a message from child pages (e.g. index.html) to start the music.
-        window.addEventListener('message', function (e) {
-            if (e.data === 'startMusic') {
-                if (audioDom.paused) {
-                    audioDom.play();
-                    musicCloseDom.classList.add('rotate');
-                }
-            }
-        }, false);
-
-        // Fetch configuration and update the document title dynamically.
-        fetch('config.json')
-            .then(response => response.json())
-            .then(config => {
-                // Update the title with the names from the configuration file.
-                document.title = `Happy Valentine's Day, ${config.fpName} & ${config.spName}`;
-            })
-            .catch(error => console.error('Error loading config:', error));
-
-            document.addEventListener('DOMContentLoaded', function () {
-        const audioDom = document.querySelector('.audio'); // Get the audio element
-        const musicCloseDom = document.querySelector('.music-close'); // Get the music icon element
-
-        // Listen for a message to stop the music
-        window.addEventListener('message', function (event) {
-            if (event.data === 'stopMusic') {
-                if (audioDom) {
-                    audioDom.pause(); // Pause the audio
-                    audioDom.currentTime = 0; // Reset the audio to the beginning
-                    console.log("Music stopped via message.");
-                }
-
-                // Remove the rotate class from the music icon
-                if (musicCloseDom) {
-                    musicCloseDom.classList.remove('rotate');
-                }
-            }
-        }, false);
-    });
-    </script>
+    <script src="script.js"></script>
 </body>
-
 </html>
