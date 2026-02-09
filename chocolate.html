@@ -1,53 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Chocolate Day!</title>
-    <link rel="stylesheet" href="days.css">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Chocolate Day - For Sonakshi 🍫</title>
+    <link rel="stylesheet" href="../day-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
+<body class="chocolate-day">
+    <div class="petals-container"></div>
+    
+    <nav class="nav">
+        <a href="../index.html" class="back-btn">← Back to Home</a>
+    </nav>
 
-<body>
-    <div class="main">
-        <h2>* Chocolate Day Special *</h2>
-        <div class="hero">
-            <div class="left">
-                <div class="lovers-details">
-                    <!-- <h3 id="user-profile-text">Propose like <br> never before</h3> -->
-                    <img src="./assets/Love In The Air SVG Cut File.svg" alt="Love In The Air"
-                        style="width:100px;height:100px;margin-top: 2.5rem;margin-bottom: 2.5rem;">
-                    <lord-icon src="https://cdn.lordicon.com/lhwyshcs.json" trigger="hover"
-                        style="width:100px;height:100px;backdrop-filter: blur(5px);">
-                    </lord-icon>
-                    <p id="fpname">Male</p>
-                    <h3>💞</h3>
-                    <lord-icon src="https://cdn.lordicon.com/btlpicdx.json" trigger="hover"
-                        style="width:100px;height:100px;backdrop-filter: blur(5px);">
-                    </lord-icon>
-                    <p id="spname">Female</p>
+    <div class="content-wrapper">
+        <div class="day-header">
+            <div class="icon-large">🍫</div>
+            <h1 class="day-title">Chocolate Day</h1>
+            <p class="day-date">February 9, 2026</p>
+            <p class="dedication">For my sweetest Sonakshi</p>
+        </div>
+
+        <div class="message-card">
+            <h2>Sweeter Than Chocolate</h2>
+            <p>Sonakshi, they say chocolate is the sweetest thing in the world, but they haven't met you! Your love is sweeter than any chocolate, your smile more delightful than the finest truffle, and being with you is more indulgent than the richest dessert.</p>
+            <p>Just like chocolate brings joy to everyone who tastes it, you bring happiness to everyone around you, especially to me. Every moment with you is a sweet treat I never want to end.</p>
+            <p>You're the chocolate to my vanilla, the sweetness in my life, and the treat I look forward to every single day.</p>
+            <p class="signature">With all the sweetness in my heart,<br>Pabani 💕</p>
+        </div>
+
+        <div class="quote-section">
+            <h3>Sweet Thoughts</h3>
+            <div class="quote-carousel">
+                <div class="quote active">
+                    <p>"All you need is love... but a little chocolate now and then doesn't hurt."</p>
                 </div>
-                <img src="./assets/All You Need Is Love SVG Cut File.svg" alt="All You Need Is Love"
-                    style="width:100px;height:100px;margin-top: 2.5rem;">
+                <div class="quote">
+                    <p>"Life is like a box of chocolates, and you're my favorite flavor."</p>
+                </div>
+                <div class="quote">
+                    <p>"Chocolate makes everything better, but your love makes everything perfect."</p>
+                </div>
+                <div class="quote">
+                    <p>"The sweetness of chocolate pales in comparison to the sweetness of your love."</p>
+                </div>
             </div>
-            <div class="right chocolate-right">
-                <div class="back-container">
-                    <a href="#" onclick="window.history.back()">
-                        <div class="back">
-                            <span class="material-symbols-outlined">arrow_back</span>
-                            <span class="back-text">Go back</span>
-                        </div>
-                    </a>
-                </div>
-                <h3 class="quote-heading">Special Quotes for my special one on the Chocolate Day! ❤️</h3>
-                <div class="quotes"></div>
+            <div class="carousel-dots">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+                <span class="dot" data-index="2"></span>
+                <span class="dot" data-index="3"></span>
             </div>
         </div>
-        <div class="copyright-container">
-            <h3 class="copyright">Created with ❤️ by <a id="instagramProfileLink" href="#" target="_blank"><span id="instagramProfileName"></span></a></h3>
+
+        <div class="chocolate-box">
+            <h3 style="text-align: center; color: #2d1b2e; margin-bottom: 2rem; font-family: 'Playfair Display', serif; font-size: clamp(1.5rem, 3vw, 2rem);">
+                A Box of Sweet Reasons I Love You
+            </h3>
+            <div class="chocolates-grid">
+                <div class="chocolate-piece" data-reason="Your beautiful smile brightens my day">🍫</div>
+                <div class="chocolate-piece" data-reason="Your kindness touches my heart">🍫</div>
+                <div class="chocolate-piece" data-reason="Your laughter is music to my ears">🍫</div>
+                <div class="chocolate-piece" data-reason="Your support means everything to me">🍫</div>
+                <div class="chocolate-piece" data-reason="Your love makes me complete">🍫</div>
+                <div class="chocolate-piece" data-reason="Your presence makes life sweeter">🍫</div>
+                <div class="chocolate-piece" data-reason="Your warmth comforts my soul">🍫</div>
+                <div class="chocolate-piece" data-reason="Your beauty takes my breath away">🍫</div>
+                <div class="chocolate-piece" data-reason="You make every day special">🍫</div>
+            </div>
+            <p style="text-align: center; margin-top: 2rem; font-style: italic; color: #2d1b2e; opacity: 0.8;">
+                Tap each chocolate to unwrap a sweet reason! 💝
+            </p>
         </div>
     </div>
-    <script src="./quotesChocolateDay.js"></script>
-    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+
+    <script src="../day-script.js"></script>
+    <script>
+        // Create falling chocolates
+        function createChocolate() {
+            const chocolate = document.createElement('div');
+            chocolate.className = 'falling-petal';
+            chocolate.textContent = '🍫';
+            chocolate.style.left = Math.random() * 100 + '%';
+            chocolate.style.animationDuration = Math.random() * 3 + 4 + 's';
+            chocolate.style.animationDelay = Math.random() * 2 + 's';
+            document.querySelector('.petals-container').appendChild(chocolate);
+            
+            setTimeout(() => {
+                chocolate.remove();
+            }, 7000);
+        }
+
+        setInterval(createChocolate, 1000);
+
+        // Interactive chocolate box
+        const chocolatePieces = document.querySelectorAll('.chocolate-piece');
+        
+        chocolatePieces.forEach(piece => {
+            piece.addEventListener('click', function() {
+                const reason = this.getAttribute('data-reason');
+                
+                // Create popup
+                const popup = document.createElement('div');
+                popup.className = 'chocolate-popup';
+                popup.innerHTML = `
+                    <div class="popup-content">
+                        <p>${reason}</p>
+                        <button onclick="this.parentElement.parentElement.remove()">💖</button>
+                    </div>
+                `;
+                document.body.appendChild(popup);
+                
+                // Animate piece
+                this.style.transform = 'scale(1.2) rotate(360deg)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 500);
+            });
+        });
+
+        // Add chocolate box styles
+        const style = document.createElement('style');
+        style.textContent = `
+            .chocolate-box {
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(10px);
+                padding: 2.5rem;
+                border-radius: 20px;
+                margin: 3rem 0;
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            }
+
+            .chocolates-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+                gap: 1.5rem;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+
+            .chocolate-piece {
+                font-size: 3rem;
+                text-align: center;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                padding: 1rem;
+                border-radius: 10px;
+            }
+
+            .chocolate-piece:hover {
+                transform: scale(1.1) rotate(5deg);
+                background: rgba(139, 90, 60, 0.1);
+            }
+
+            .chocolate-popup {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.7);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 1000;
+                animation: fadeIn 0.3s ease;
+            }
+
+            .popup-content {
+                background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+                color: white;
+                padding: 2.5rem;
+                border-radius: 20px;
+                max-width: 400px;
+                text-align: center;
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+                animation: slideInUp 0.4s ease;
+            }
+
+            .popup-content p {
+                font-size: 1.3rem;
+                line-height: 1.6;
+                margin-bottom: 1.5rem;
+            }
+
+            .popup-content button {
+                background: white;
+                border: none;
+                padding: 0.8rem 2rem;
+                border-radius: 50px;
+                font-size: 1.2rem;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+
+            .popup-content button:hover {
+                transform: scale(1.1);
+            }
+
+            @media (max-width: 768px) {
+                .chocolate-box {
+                    padding: 1.5rem;
+                }
+
+                .chocolates-grid {
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 1rem;
+                }
+
+                .chocolate-piece {
+                    font-size: 2.5rem;
+                    padding: 0.5rem;
+                }
+
+                .popup-content {
+                    padding: 2rem 1.5rem;
+                    margin: 1rem;
+                }
+
+                .popup-content p {
+                    font-size: 1.1rem;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
